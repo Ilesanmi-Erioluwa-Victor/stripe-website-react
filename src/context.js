@@ -4,7 +4,7 @@ import data from "./Data";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [isSiderbarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openSidebar = () => {
@@ -22,5 +22,18 @@ const AppProvider = ({ children }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  return <AppContext.Provide>{children}</AppContext.Provide>;
+  return (
+    <AppContext.Provide
+      value={{
+        isModalOpen,
+        isSidebarOpen,
+        openModal,
+        openSidebar,
+        closeModal,
+        closeSidebar,
+      }}
+    >
+      {children}
+    </AppContext.Provide>
+  );
 };
