@@ -20,10 +20,17 @@ export const Navbar = () => {
         <ul className="nav-links">
           <li>
             <button className="link-btn">Products</button>
+          </li>
+          <li>
             <button className="link-btn">Developers</button>
+          </li>
+
+          <li>
             <button className="link-btn">Company</button>
           </li>
         </ul>
+
+        <button className="btn signin-btn">signin</button>
       </div>
     </nav>
   );
