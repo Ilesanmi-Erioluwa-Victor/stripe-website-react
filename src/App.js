@@ -5,10 +5,10 @@ import { Sidebar } from "./Sidebar";
 function App() {
   return (
     <>
-      <Hero />
       <Navbar />
-      <Submenu />
       <Sidebar />
+      <Hero />
+      <Submenu />
     </>
   );
 }
