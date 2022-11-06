@@ -3,7 +3,7 @@ import data from "./Data";
 
 const AppContext = createContext();
 
-const AppProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,7 +23,7 @@ const AppProvider = ({ children }) => {
     setIsModalOpen(false);
   };
   return (
-    <AppContext.Provide
+    <AppContext.Provider
       value={{
         isModalOpen,
         isSidebarOpen,
@@ -34,6 +34,10 @@ const AppProvider = ({ children }) => {
       }}
     >
       {children}
-    </AppContext.Provide>
+    </AppContext.Provider>
   );
+};
+
+export const useGlobalContext = () => {
+  return useContext(AppContext);
 };
